@@ -14,7 +14,6 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     this._categoryRemoteDatasource,
   ) : super(const _Initial()) {
     on<_GetCategory>((event, emit) async {
-      // TODO: implement event handler
       emit(const CategoryState.loading());
       final response = await _categoryRemoteDatasource.getCategories();
 

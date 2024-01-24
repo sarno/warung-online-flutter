@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_onlineshop_app/presentation/home/bloc/checkout/checkout_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/components/spaces.dart';
@@ -72,7 +74,9 @@ class ProductCard extends StatelessWidget {
           Align(
             alignment: Alignment.bottomRight,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<CheckoutBloc>().add(CheckoutEvent.addItem(data));
+              },
               icon: Container(
                 padding: const EdgeInsets.all(4.0),
                 decoration: BoxDecoration(

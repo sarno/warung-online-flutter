@@ -14,7 +14,7 @@ class MinumanBloc extends Bloc<MinumanEvent, MinumanState> {
 
   MinumanBloc(
     this._productRemoteDatasource,
-  ) : super(_Initial()) {
+  ) : super(const _Initial()) {
     on<MinumanEvent>((event, emit) async {
       emit(const MinumanState.loading());
       final response = await _productRemoteDatasource.getProductByCategory(5);

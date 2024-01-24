@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_onlineshop_app/data/datasources/category_remote_datasource.dart';
 import 'package:flutter_onlineshop_app/data/datasources/product_remote_datasource.dart';
+import 'package:flutter_onlineshop_app/presentation/home/bloc/checkout/checkout_bloc.dart';
 import 'package:flutter_onlineshop_app/presentation/home/bloc/minuman/minuman_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,6 +10,7 @@ import 'core/constants/colors.dart';
 import 'core/router/app_router.dart';
 import 'presentation/home/bloc/all_product/all_product_bloc.dart';
 import 'presentation/home/bloc/category/category_bloc.dart';
+import 'presentation/home/bloc/makanan/makanan_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +33,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => MinumanBloc(ProductRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => MakananBloc(ProductRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => CheckoutBloc(),
         ),
       ],
       child: MaterialApp.router(

@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_onlineshop_app/data/models/responses/product_response_model.dart';
-import 'package:flutter_onlineshop_app/presentation/home/bloc/all_product/all_product_bloc.dart';
 import 'package:http/http.dart' as http;
 
 import '../../core/constants/variables.dart';
